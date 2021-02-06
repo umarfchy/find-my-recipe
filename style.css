@@ -1,26 +1,27 @@
 .searchbox {
   width: 100%;
   text-align: center;
+  align-items: center;
   padding: 50px;
 }
 
 #searchedItem {
   width: 300px;
-  height: 30px;
+  height: 40px;
   border-radius: 5px;
 }
 
 #btnClicked {
-  height: 30px;
-  border-radius: 5px;
+  height: 40px;
+  border-radius: 10px;
   background: red;
   color: white;
-  font-size: 15px;
+  font-size: 17px;
   font-weight: bold;
 }
 
 .card {
-  border: 3px solid black;
+  border: 2px solid black;
   border-radius: 5px;
   width: 250px;
 }
@@ -31,4 +32,10 @@
 
 .card h3 {
   text-align: center;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-row-gap: 20px;
 }
