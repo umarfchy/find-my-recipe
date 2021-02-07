@@ -53,6 +53,7 @@ function showDetails(){
             const singleCardInfo = `
                                     <img src="${singleFoodImage}" alt="">
                                     <h3>${singleFoodName}</h3>
+                                    <h3>Ingredients:-</h3>
             `;
             // adding the html in cards showcase
             const singleCardDetails = document.createElement('div');
