@@ -32,8 +32,6 @@
 #foodDetailsDiv {
   display: none;
   border: 1px solid gray;
-  /* background: gray;
-  border: 3px solid black; */
 }
 
 /* food card sections */
@@ -58,7 +56,7 @@
   grid-column-gap: 20px;
 }
 
-/* clicked card section  */
+/* clicked card section that shows details of food */
 
 .cardClicked {
   height: 100%;
