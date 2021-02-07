@@ -41,9 +41,41 @@ document.getElementById('btnClicked').addEventListener('click', ()=> {
 
 
 function showDetails(){
-    document.getElementById('foodDetailsDiv').style.display = 'block';
-    console.log(this.id);
+    document.getElementById('foodDetailsDiv').style.display = 'grid';
+    const fetchLink ='https://www.themealdb.com/api/json/v1/1/lookup.php?i=' + this.id
+    fetch(fetchLink)
+        .then(response => response.json())
+        .then(meals => {
+            // console.log(meal);
+            const CardDetails = document.getElementById('foodDetailsDiv');
+            const singleFoodName = meals[0].meal.strMeal;
+            const singleFoodImage = meals[0].meal.strMealThumb;
+
+            console.log(singleFoodName);
+            console.log(singleFoodImage);
+
+            // const singleCardInfo = `
+            //                         <img src="${singleFoodImage}" alt="">
+            //                         <h3>${singleFoodName}</h3>
+            //                         <ul class = "ingredients"></ul>
+            // `;
+            // // adding the html in cards showcase
+            // const singleCardDetails = document.createElement('div');
+            // singleCardDetails.innerHTML = singleCardInfo;
+            
+            // // //adding ingredient items 
+            // // const ul = document.getElementsByClassName('ingredients')
+            // // meal.meal.forEach(index => {
+            // //     const li = index;
+            // //     ul.appendChild(li);
+            // // });
+            // CardDetails.appendChild(singleCardDetails);
+        });
 }
+
+
+
+
 
 
 // testing purpose data
