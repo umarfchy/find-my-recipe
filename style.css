@@ -1,3 +1,4 @@
+/* search box stylings */
 .searchbox {
   width: 100%;
   text-align: center;
@@ -20,10 +21,21 @@
   font-weight: bold;
 }
 
+/* food types showcases mother div */
 #foodShowcase {
-  margin-left: 50px;
+  display: grid;
+  grid-row-gap: 20px;
 }
 
+/* food details section */
+#foodDetailsDiv {
+  display: none;
+  background: gray;
+  border: 3px solid black;
+  height: 70px;
+}
+
+/* food card sections */
 .card {
   border: 2px solid black;
   border-radius: 5px;
