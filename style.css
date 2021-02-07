@@ -25,6 +25,7 @@
 #foodShowcase {
   display: grid;
   grid-row-gap: 20px;
+  justify-content: space-around;
 }
 
 /* food details section */
@@ -54,4 +55,5 @@
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   grid-row-gap: 20px;
+  grid-column-gap: 20px;
 }

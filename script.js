@@ -30,7 +30,7 @@ document.getElementById('btnClicked').addEventListener('click', ()=> {
             // adding the html in cards showcase
             const singleCard = document.createElement('div');
             singleCard.className = 'card';
-            singleCard.id = 'card-no-' + i;
+            singleCard.id = meal.idMeal;
             singleCard.onclick = showDetails;
             singleCard.innerHTML = singleCardInfo;
             cardsDiv.appendChild(singleCard);
