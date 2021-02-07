@@ -60,15 +60,16 @@
 /* clicked card section  */
 
 .cardClicked {
-  border: 2px solid black;
-  border-radius: 5px;
-  width: 250px;
+  height: 100%;
+  display: grid;
+  justify-content: center;
 }
 
 .cardClicked img {
-  width: 100%;
+  width: 40%;
+  border-radius: 5px;
 }
 
 .cardClicked h3 {
-  text-align: center;
+  justify-content: center;
 }

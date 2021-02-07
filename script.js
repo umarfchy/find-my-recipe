@@ -53,7 +53,6 @@ function showDetails(){
             const singleCardInfo = `
                                     <img src="${singleFoodImage}" alt="">
                                     <h3>${singleFoodName}</h3>
-                                    <ul class = "ingredients"></ul>
             `;
             // adding the html in cards showcase
             const singleCardDetails = document.createElement('div');
@@ -61,20 +60,19 @@ function showDetails(){
             singleCardDetails.innerHTML = singleCardInfo;
             
             //adding ingredient items 
-            const ul = document.getElementsByClassName('ingredients')
-            
+            const ul = document.createElement('ul')
+            singleCardDetails.appendChild(ul);
             for (const property in mealObj.meals[0]) {
                 let i = property.slice(0, 13);
-                if (i === 'strIngredient' && mealObj.meals[0][property] !== ""){
-                    console.log(property);
+                if (i === 'strIngredient' && 
+                mealObj.meals[0][property] != ""
+                ){
+                    const li = document.createElement('li');
+                    li.innerText = mealObj.meals[0][property];
+                    ul.appendChild(li);
                 }
             }
             
-            
-            // mealObj.meals[0].forEach(index => {
-            //     const li = index;
-            //     ul.appendChild(li);
-            // });
             CardDetails.appendChild(singleCardDetails);
         });
 }
