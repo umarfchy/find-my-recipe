@@ -45,31 +45,37 @@ function showDetails(){
     const fetchLink ='https://www.themealdb.com/api/json/v1/1/lookup.php?i=' + this.id
     fetch(fetchLink)
         .then(response => response.json())
-        .then(meals => {
+        .then(mealObj => {
             // console.log(meal);
             const CardDetails = document.getElementById('foodDetailsDiv');
-            const singleFoodName = meals[0].meal.strMeal;
-            const singleFoodImage = meals[0].meal.strMealThumb;
-
-            console.log(singleFoodName);
-            console.log(singleFoodImage);
-
-            // const singleCardInfo = `
-            //                         <img src="${singleFoodImage}" alt="">
-            //                         <h3>${singleFoodName}</h3>
-            //                         <ul class = "ingredients"></ul>
-            // `;
-            // // adding the html in cards showcase
-            // const singleCardDetails = document.createElement('div');
-            // singleCardDetails.innerHTML = singleCardInfo;
+            const singleFoodName = mealObj.meals[0].strMeal;
+            const singleFoodImage = mealObj.meals[0].strMealThumb;
+            const singleCardInfo = `
+                                    <img src="${singleFoodImage}" alt="">
+                                    <h3>${singleFoodName}</h3>
+                                    <ul class = "ingredients"></ul>
+            `;
+            // adding the html in cards showcase
+            const singleCardDetails = document.createElement('div');
+            singleCardDetails.className = 'cardClicked'
+            singleCardDetails.innerHTML = singleCardInfo;
             
-            // // //adding ingredient items 
-            // // const ul = document.getElementsByClassName('ingredients')
-            // // meal.meal.forEach(index => {
-            // //     const li = index;
-            // //     ul.appendChild(li);
-            // // });
-            // CardDetails.appendChild(singleCardDetails);
+            //adding ingredient items 
+            const ul = document.getElementsByClassName('ingredients')
+            
+            for (const property in mealObj.meals[0]) {
+                let i = property.slice(0, 13);
+                if (i === 'strIngredient' && mealObj.meals[0][property] !== ""){
+                    console.log(property);
+                }
+            }
+            
+            
+            // mealObj.meals[0].forEach(index => {
+            //     const li = index;
+            //     ul.appendChild(li);
+            // });
+            CardDetails.appendChild(singleCardDetails);
         });
 }
 
@@ -79,9 +85,9 @@ function showDetails(){
 
 
 // testing purpose data
-// fetch('https://www.themealdb.com/api/json/v1/1/search.php?s=tom')
-// .then(response => response.json())
-// .then(data => console.log(data));
+fetch('https://www.themealdb.com/api/json/v1/1/lookup.php?i=52772')
+.then(response => response.json())
+.then(data => console.log(data));
 
 
 // document.getElementById('btnClicked').addEventListener('click', ()=> {

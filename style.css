@@ -33,7 +33,6 @@
   display: none;
   background: gray;
   border: 3px solid black;
-  height: 200px;
 }
 
 /* food card sections */
@@ -56,4 +55,20 @@
   grid-template-columns: repeat(4, 1fr);
   grid-row-gap: 20px;
   grid-column-gap: 20px;
+}
+
+/* clicked card section  */
+
+.cardClicked {
+  border: 2px solid black;
+  border-radius: 5px;
+  width: 250px;
+}
+
+.cardClicked img {
+  width: 100%;
+}
+
+.cardClicked h3 {
+  text-align: center;
 }
