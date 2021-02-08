@@ -1,7 +1,6 @@
-
-function showDetails(){
+function showDetails(param){
     document.getElementById('foodDetailsDiv').style.display = 'grid';
-    const fetchLink ='https://www.themealdb.com/api/json/v1/1/lookup.php?i=' + this.id
+    const fetchLink ='https://www.themealdb.com/api/json/v1/1/lookup.php?i=' + param
     fetch(fetchLink)
         .then(response => response.json())
         .then(mealObj => {
@@ -50,20 +49,11 @@ document.getElementById('btnClicked').addEventListener('click', ()=> {
     .then(data => data.meals.forEach(meal => {
         const cardsDiv = document.getElementById('cardsDiv');
 
-        const singleCardInfo = `    <div onclick='showDetails' class="card" id="${meal.idMeal}">
+        const singleCardInfo = `    <div onclick='showDetails(${meal.idMeal})' class="card">
                                     <img src="${meal.strMealThumb}" alt="">
                                     <h3>${meal.strMeal}</h3>
                                     </div>
             `;
-        //  // making card for single food item
-        // const singleCard = document.createElement('div');
-        // singleCard.className = 'card';
-        // singleCard.id = meal.idMeal;
-        // singleCard.onclick = showDetails;
-        // singleCard.innerHTML = singleCardInfo;
-
-        // adding card to the showcase area
-        // cardsDiv.appendChild(singleCardInfo);
         cardsDiv.innerHTML = cardsDiv.innerHTML + singleCardInfo;
     })
     );
