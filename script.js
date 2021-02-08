@@ -1,3 +1,4 @@
+// shows details on clicked item
 function showDetails(cardID){
     document.getElementById('foodDetailsDiv').style.display = 'grid';
     const fetchLink ='https://www.themealdb.com/api/json/v1/1/lookup.php?i=' + cardID
