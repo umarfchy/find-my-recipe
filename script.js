@@ -1,36 +1,3 @@
-// Response on button
-document.getElementById('btnClicked').addEventListener('click', ()=> {
-    const searchedItem = document.getElementById('searchedItem').value;
-    const fetchLink = "https://www.themealdb.com/api/json/v1/1/search.php?s=" + searchedItem;
-
-    fetch(fetchLink)
-    .then(response => response.json())
-    .then(data => foodName(data));
-
-    // Following section will be used for template literal
-    const foodName = apiObject => {
-        const cardsDiv = document.getElementById('cardsDiv')
-        for (let i = 0; i < apiObject.meals.length; i++) {
-            const meal = apiObject.meals[i];
-            //getting the name and image of the food in html
-            const singleFoodName = meal.strMeal;
-            const singleFoodImage = meal.strMealThumb;
-            const singleCardInfo = `
-                                    <img src="${singleFoodImage}" alt="">
-                                    <h3>${singleFoodName}</h3>
-            `;
-            // adding the html in cards showcase
-            const singleCard = document.createElement('div');
-            singleCard.className = 'card';
-            singleCard.id = meal.idMeal;
-            singleCard.onclick = showDetails;
-            singleCard.innerHTML = singleCardInfo;
-            cardsDiv.appendChild(singleCard);
-            
-        }
-    }
-})
-
 
 function showDetails(){
     document.getElementById('foodDetailsDiv').style.display = 'grid';
@@ -69,3 +36,35 @@ function showDetails(){
             CardDetails.appendChild(singleCardDetails);
         });
 }
+
+
+
+// Response on button
+document.getElementById('btnClicked').addEventListener('click', ()=> {
+    const searchedItem = document.getElementById('searchedItem').value;
+    // const searchedItem = 'a'; 
+    const fetchLink = "https://www.themealdb.com/api/json/v1/1/search.php?s=" + searchedItem;
+
+    fetch(fetchLink)
+    .then(response => response.json())
+    .then(data => data.meals.forEach(meal => {
+        const cardsDiv = document.getElementById('cardsDiv');
+
+        const singleCardInfo = `    <div onclick='showDetails' class="card" id="${meal.idMeal}">
+                                    <img src="${meal.strMealThumb}" alt="">
+                                    <h3>${meal.strMeal}</h3>
+                                    </div>
+            `;
+        //  // making card for single food item
+        // const singleCard = document.createElement('div');
+        // singleCard.className = 'card';
+        // singleCard.id = meal.idMeal;
+        // singleCard.onclick = showDetails;
+        // singleCard.innerHTML = singleCardInfo;
+
+        // adding card to the showcase area
+        // cardsDiv.appendChild(singleCardInfo);
+        cardsDiv.innerHTML = cardsDiv.innerHTML + singleCardInfo;
+    })
+    );
+});
