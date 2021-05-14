@@ -44,7 +44,9 @@ input:focus {
 
 /* food card sections */
 .card {
-  border: 2px solid black;
+  /* border: 0.5px solid black; */
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  padding: 0.5rem;
   border-radius: 5px;
   width: 250px;
   cursor: pointer;
@@ -52,6 +54,7 @@ input:focus {
 
 .card > img {
   width: 100%;
+  margin-bottom: 0.2rem;
 }
 
 .card > h3 {
