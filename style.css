@@ -1,24 +1,32 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap");
+
+* {
+  font-family: "Poppins", sans-serif, monospace;
+}
+
 /* search box stylings */
 .searchbox {
-  width: 100%;
-  text-align: center;
+  display: flex;
   align-items: center;
-  padding: 50px;
+  justify-content: center;
+  margin: 2rem 0;
 }
 
 #searchedItem {
   width: 300px;
   height: 40px;
-  border-radius: 5px;
+  border: 1px solid black;
+  border-radius: 0;
+  margin-right: 0.5rem;
+}
+
+input:focus {
+  outline: none;
 }
 
 #btnClicked {
+  border-radius: 0;
   height: 40px;
-  border-radius: 10px;
-  background: red;
-  color: white;
-  font-size: 17px;
-  font-weight: bold;
 }
 
 /* food types showcases mother div */
@@ -39,13 +47,15 @@
   border: 2px solid black;
   border-radius: 5px;
   width: 250px;
+  cursor: pointer;
 }
 
-.card img {
+.card > img {
   width: 100%;
 }
 
-.card h3 {
+.card > h3 {
+  font-size: 1.2rem;
   text-align: center;
 }
 

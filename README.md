@@ -1,3 +1,5 @@
-# milestone-project-5
+# Find my recipe
 
-live-site: https://unzippinglinux.github.io/milestone-project-5/index.html
+- Search option to find your favorite food item recipe
+- Show recipe on clicking the card using JavaScript
+- Used Bootstrap using user interface

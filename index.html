@@ -1,28 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Milestone Project 5</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
     <div class="container">
-        <div class="searchbox">
-            <input id='searchedItem' type="search" placeholder="Enter the meal name">
-            <button id="btnClicked">Search</button>
-        </div>
+      <h3 class="mt-3 text-center text-success">Find My Recipe</h3>
+      <p class="mt-3 text-center">
+        Search your recipe here! Start by typing your favorite ingredient
+      </p>
+      <div class="searchbox">
+        <input
+          class="form-control"
+          id="searchedItem"
+          type="search"
+          placeholder="Enter the meal name"
+        />
+        <button class="btn btn-outline-success" id="btnClicked">Search</button>
+      </div>
     </div>
     <div id="foodShowcase" class="container">
-        <!-- for food details -->
-        <div id="foodDetailsDiv" class="foodDetails">
-        </div>
+      <!-- for food details -->
+      <div id="foodDetailsDiv" class="foodDetails"></div>
 
-        <!-- for card showcase -->
-        <div id="cardsDiv" class="cards">
-        </div>
+      <!-- for card showcase -->
+      <div id="cardsDiv" class="cards"></div>
     </div>
-    
+
     <script src="./script.js"></script>
-</body>
+  </body>
 </html>
